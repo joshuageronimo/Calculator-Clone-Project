@@ -25,14 +25,15 @@ struct CalculatorBrain {
     }
     
     // this is a Dictionary for the different types of operation symbols
-    var operationDictionary: [String : Operations] = ["AC" : Operations.constant(0.0),
-                                                      "±" : Operations.unary({-$0}),
-                                                      "%" : Operations.unary({$0 / 100.0}),
-                                                      "÷" : Operations.binary({$0 / $1}),
-                                                      "×" : Operations.binary({$0 * $1}),
-                                                      "−" : Operations.binary({$0 - $1}),
-                                                      "+" : Operations.binary({$0 + $1}),
-                                                      "=" : Operations.equals
+    var operationDictionary: [String : Operations] = [
+        "AC" : Operations.constant(0.0),
+        "±" : Operations.unary({-$0}),
+        "%" : Operations.unary({$0 / 100.0}),
+        "÷" : Operations.binary({$0 / $1}),
+        "×" : Operations.binary({$0 * $1}),
+        "−" : Operations.binary({$0 - $1}),
+        "+" : Operations.binary({$0 + $1}),
+        "=" : Operations.equals
     ]
     
     // this function decideds which what Operation case to perform
